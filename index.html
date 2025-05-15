@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Losowe Cytaty Kornela Makuszyńskiego</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Cormorant+Garamond&display=swap');
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Cormorant Garamond', serif;
+    background: #f9f4e7;
+    color: #4a2c2a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  .container {
+    background: #fff8f0;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(74,44,42,0.3);
+    max-width: 600px;
+    padding: 2rem 3rem;
+    text-align: center;
+    position: relative;
+  }
+  img {
+    position: absolute;
+    top: 20px;
+    left: -110px;
+    width: 100px;
+    user-select: none;
+  }
+  .quote {
+    font-size: 1.6rem;
+    font-style: italic;
+    margin-bottom: 1.2rem;
+  }
+  .author {
+    font-size: 1rem;
+    color: #7a574f;
+  }
+  footer {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #a68c7c;
+    font-family: 'Dancing Script', cursive;
+  }
+  @media (max-width: 700px) {
+    .container {
+      padding-left: 4.5rem;
+      padding-right: 1.5rem;
+    }
+    img {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 70px;
+      margin: 0 auto 1rem;
+      display: block;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <img src="koziolk-matolek.png" alt="Koziołek Matołek" />
+    <div class="quote" id="quote"></div>
+    <div class="author" id="author"></div>
+  </div>
+  <footer>© Cytaty Kornela Makuszyńskiego</footer>
+
+<script>
+  const quotes = [
+    {"text":"W Pacanowie kozy kują, więc Koziołek mądra głowa, błąka się po całym świecie, aby dojść do Pacanowa.","author":"Przygody Koziołka Matołka"},
+    {"text":"Nie każdy kozioł ma rozum w głowie, lecz nie każdy też chodzi po świecie.","author":"Przygody Koziołka Matołka"},
+    {"text":"Największą siłą człowieka jest rozum – i uśmiech.","author":"Szatan z siódmej klasy"},
+    {"text":"Dobroć jest jak słońce – wszystko oświeca, ale nie razi.","author":"Szatan z siódmej klasy"},
+    {"text":"Człowiek naprawdę mądry nie potrzebuje ani złości, ani siły.","author":"Szatan z siódmej klasy"},
+    {"text":"Są ludzie, którzy nawet w nieszczęściu potrafią śmiać się przez łzy.","author":"Awantura o Basię"},
+    {"text":"Dziecko jest jak promień słońca – rozświetla życie dorosłych.","author":"Awantura o Basię"},
+    {"text":"Miłość nie zna różnicy wieku ani rozumu.","author":"Awantura o Basię"},
+    {"text":"Trzeba być odważnym, bo życie nie znosi tchórzy.","author":"Panna z mokrą głową"},
+    {"text":"Nie wolno się smucić, gdy świat jest taki piękny!","author":"Panna z mokrą głową"},
+    {"text":"Nie każda panna z mokrą głową jest szalona – niektóre po prostu żyją pełnią życia.","author":"Panna z mokrą głową"},
+    {"text":"Czasem trzeba stracić wszystko, by zrozumieć, co naprawdę się liczy.","author":"O dwóch takich, co ukradli księżyc"},
+    {"text":"Nie ten bogaty, kto ma złoto, lecz ten, kto ma dobre serce.","author":"O dwóch takich, co ukradli księżyc"},
+    {"text":"Śmiech jest najkrótszą drogą między dwoma ludźmi.","author":"Z pamiętnika wariata"},
+    {"text":"Poezja to nie są tylko słowa – to sposób patrzenia na świat.","author":"Z pamiętnika wariata"},
+    {"text":"Pisarz bez uśmiechu jest jak ptak bez skrzydeł.","author":"Z pamiętnika wariata"},
+    {"text":"Słońce świeci wszystkim jednakowo, tylko ludzie robią sobie nawzajem cień.","author":"Bez określonego tytułu"},
+    {"text":"Uśmiech kosztuje mniej niż elektryczność, a daje więcej światła.","author":"Bez określonego tytułu"},
+    {"text":"Kto ma słońce w duszy, ten zawsze znajdzie światło w ciemności.","author":"Bez określonego tytułu"}
+  ];
+
+  function showRandomQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    const quote = quotes[randomIndex];
+    document.getElementById('quote').textContent = `"${quote.text}"`;
+    document.getElementById('author').textContent = `– ${quote.author}`;
+  }
+
+  showRandomQuote();
+</script>
+</body>
+</html>
