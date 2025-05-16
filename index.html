@@ -22,8 +22,6 @@
       align-items: center;
       justify-content: center;
       color: #2c1c13;
-      flex-direction: column;
-      padding: 1rem;
     }
 
     .quote-box {
@@ -33,16 +31,6 @@
       text-align: center;
       max-width: 700px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeIn 1s ease-out forwards;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
 
     .quote {
@@ -56,40 +44,22 @@
       color: #5c4238;
     }
 
-    .button {
-      margin-top: 2rem;
-      background-color: #d43f3a;
-      color: white;
-      border: none;
-      padding: 0.7rem 1.5rem;
-      font-size: 1rem;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: background-color 0.3s;
-    }
-
-    .button:hover {
-      background-color: #c02f2a;
-    }
-
     @media (max-width: 600px) {
       .quote {
         font-size: 1.3rem;
       }
       .quote-box {
+        margin: 1rem;
         padding: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="quote-box" id="quote-box">
+  <div class="quote-box">
     <div class="quote" id="quote"></div>
     <div class="author" id="author"></div>
   </div>
-
-  <button class="button" onclick="showRandomQuote()">Nowy cytat</button>
 
   <script>
     const quotes = [
@@ -114,22 +84,10 @@
       {"text":"Kto ma słońce w duszy, ten zawsze znajdzie światło w ciemności.","author":"Bez określonego tytułu"}
     ];
 
-    function showRandomQuote() {
-      const randomIndex = Math.floor(Math.random() * quotes.length);
-      const quote = quotes[randomIndex];
-      document.getElementById("quote").textContent = `"${quote.text}"`;
-      document.getElementById("author").textContent = `– ${quote.author}`;
-      
-      const box = document.getElementById("quote-box");
-      box.style.opacity = 0;
-      box.style.transform = "translateY(20px)";
-      setTimeout(() => {
-        box.style.opacity = 1;
-        box.style.transform = "translateY(0)";
-      }, 50);
-    }
-
-    showRandomQuote();
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    const quote = quotes[randomIndex];
+    document.getElementById("quote").textContent = `"${quote.text}"`;
+    document.getElementById("author").textContent = `– ${quote.author}`;
   </script>
 </body>
 </html>
